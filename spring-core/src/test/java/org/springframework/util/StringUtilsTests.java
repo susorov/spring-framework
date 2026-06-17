@@ -217,6 +217,8 @@ class StringUtilsTests {
 		assertThat(StringUtils.substringMatch("foo", 0, "foo")).isTrue();
 		assertThat(StringUtils.substringMatch("foo", 1, "oo")).isTrue();
 		assertThat(StringUtils.substringMatch("foo", 2, "o")).isTrue();
+		assertThat(StringUtils.substringMatch("foo", -1, "foo")).isFalse();
+		assertThat(StringUtils.substringMatch("foo", -1, "")).isFalse();
 		assertThat(StringUtils.substringMatch("foo", 0, "fOo")).isFalse();
 		assertThat(StringUtils.substringMatch("foo", 1, "fOo")).isFalse();
 		assertThat(StringUtils.substringMatch("foo", 2, "fOo")).isFalse();
